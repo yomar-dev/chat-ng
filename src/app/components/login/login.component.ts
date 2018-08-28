@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ChatService } from '../../providers/chat.service';
 
 @Component({
   selector: 'app-login',
@@ -7,10 +8,11 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
-  constructor() { }
+  constructor(private _chat: ChatService) { }
 
   login(provider: string) {
     console.log(provider);
+    this._chat.login(provider);
   }
 
 }
