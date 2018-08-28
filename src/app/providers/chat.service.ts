@@ -21,4 +21,14 @@ export class ChatService {
       console.log(messages);
     }));
   }
+
+  sendMessage(msg: string) {
+    const message: Message = {
+      name: 'Demo',
+      message: msg,
+      date: new Date().getTime()
+    };
+
+    return this.itemsCollection.add(message);
+  }
 }
