@@ -1,7 +1,15 @@
 <div class="container main-container">
   <h1>Chat NG</h1>
 
-  <div class="chat-window">
-      <app-chat></app-chat>
+  <div class="col-md-12 text-right" *ngIf="_chat.user.uid">
+    <button (click)="_chat.logout()" class="btn btn-outline-danger">
+      Logout
+    </button>
   </div>
+
+  <app-login *ngIf="!_chat.user.uid"></app-login>
+
+  <!-- <div class="chat-window">
+      <app-chat></app-chat>
+  </div> -->
 </div>
